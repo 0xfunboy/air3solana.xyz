@@ -1,0 +1,44 @@
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>FAQ</span>
+    <h1 data-reveal><span class="grad-silver">Quick answers.</span></h1>
+    <p class="lead" data-reveal>The essentials on AIR3, AIRTrading, seasons, exits and rewards. For live limits, thresholds and wallet actions, the dApp is always the source of truth.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap" style="max-width:860px">
+    <h2 class="mb-2" data-reveal>Product</h2>
+    <details class="acc" data-reveal><summary>What is AIR3?</summary><div class="acc-body"><p>AIR3 is an execution-native AI trading agent on Solana built by AIRewardrop. It combines live market intelligence, social distribution, AIRTrading vault execution, AIRTrack proof, AIRi voice/avatar interaction and AIR3 buyback/distribution flows in one product system.</p></div></details>
+    <details class="acc" data-reveal><summary>What is AIRdApp?</summary><div class="acc-body"><p>AIRdApp is the operational hub where users access AIRTrack, AIRTrading, AIRSocial, AIRSponsor and AIRTool with one Solana wallet connection: <a href="{{dapp}}" target="_blank" rel="noopener noreferrer">airdapp.airewardrop.xyz ↗</a></p></div></details>
+    <details class="acc" data-reveal><summary>What is AIRTrading?</summary><div class="acc-body"><p>The vault-based autotrading module: users deposit USDC into a shared on-chain vault, the AIR3 agent executes approved perp trades on Pacifica, and results settle weekly at the end of each season. See <a href="/airtrading/">AIRTrading</a> and the <a href="/manual/">User Manual</a>.</p></div></details>
+    <details class="acc" data-reveal><summary>What is AIRTrack?</summary><div class="acc-body"><p>The proof layer: it records trade states (pending, open, closed, discarded), realized PnL and full performance history so users can verify what happened instead of trusting claims. AIRTrack has no deposits and no seasons: it is the pure trading record.</p></div></details>
+    <details class="acc" data-reveal><summary>What is AIRi?</summary><div class="acc-body"><p>The embodied interface layer: a wallet-authenticated voice/chat/3D-avatar session with market context and execution-ready UX, in browser and mobile. It debuted as AIRifica during the Pacifica Hackathon and is now simply AIRi: <a href="{{airi}}" target="_blank" rel="noopener noreferrer">airi.airewardrop.xyz ↗</a></p></div></details>
+    <details class="acc" data-reveal><summary>Is AIR3 already live?</summary><div class="acc-body"><p>Yes. The token (Nov 2024), the social/live agent, AIRdApp, AIRTrack and the AIRTrading mainnet beta are all in production. The launch phase of the roadmap is complete: see the <a href="/roadmap/">updated roadmap</a>.</p></div></details>
+
+    <h2 class="mb-2 mt-4" data-reveal>Deposits &amp; seasons</h2>
+    <details class="acc" data-reveal><summary>What is a season?</summary><div class="acc-body"><p>One weekly trading cycle. All capital movements (deposit activation, settlement, exits) happen at the weekly cutoff. The dashboard shows the countdown at all times.</p></div></details>
+    <details class="acc" data-reveal><summary>What are the deposit limits?</summary><div class="acc-body"><p>Currently 10 to 500 USDC per wallet during mainnet beta. Limits may change as the vault matures; the values shown in the dApp panels are always the ones in force.</p></div></details>
+    <details class="acc" data-reveal><summary>What is the holder threshold?</summary><div class="acc-body"><p>When the whitelist policy is ON, listed wallets can deposit; holding at least the AIR3 threshold (currently 1,000,000 AIR3) also qualifies. Check the Deposit panel in the dApp for the live values.</p></div></details>
+    <details class="acc" data-reveal><summary>Why do deposits activate later?</summary><div class="acc-body"><p>Deposits enter as pending and activate at the next weekly cutoff so all capital follows the same season accounting model. Pending capital does not trade, does not earn weekly PnL, and is not routed to the executor yet.</p></div></details>
+    <details class="acc" data-reveal><summary>Do new deposits inherit old losses?</summary><div class="acc-body"><p>No. New deposits enter at the next global season index and only start counting PnL from the season they activate in.</p></div></details>
+
+    <h2 class="mb-2 mt-4" data-reveal>Exit, claim &amp; rewards</h2>
+    <details class="acc" data-reveal><summary>Why is exit delayed?</summary><div class="acc-body"><p>Booked capital keeps participating until the current season settles, then moves into the isolated claimable reserve when the next season opens. Worst case, the full path takes about two weekly cutoffs.</p></div></details>
+    <details class="acc" data-reveal><summary>How does the buyback work?</summary><div class="acc-body"><p>At settlement, 1% of positive weekly PnL goes to treasury (min $0.10); the remainder buys AIR3 on the market if it reaches the $5 minimum swap threshold. Bought AIR3 splits 50% to users pro rata and 50% to treasury.</p></div></details>
+    <details class="acc" data-reveal><summary>Where are my AIR3 rewards delivered?</summary><div class="acc-body"><p>They accrue at each profitable settlement and are delivered when you claim.</p></div></details>
+    <details class="acc" data-reveal><summary>Can I lose money?</summary><div class="acc-body"><p><b>Yes.</b> The agent trades perps and seasons can close in loss. Losses reduce the season index and therefore your capital. Only deposit what you can afford to risk. Read the <a href="/legal/risk.html">risk disclosure</a>.</p></div></details>
+
+    <h2 class="mb-2 mt-4" data-reveal>Execution &amp; trust</h2>
+    <details class="acc" data-reveal><summary>How will leverage scale?</summary><div class="acc-body"><p>In controlled steps toward 10x, on a strategy that has already proven itself. The Backtest Engine replays the live strategy on real datasets and validates every config before it reaches execution; as live and simulated results converge, size steps up. Leverage multiplies validated performance, so validation comes first.</p></div></details>
+    <details class="acc" data-reveal><summary>What is the simulation vs live gap?</summary><div class="acc-body"><p>AIRTrack runs strategy simulation alongside live execution and measures the distance between the two. Closing that gap is the alignment metric that gates each leverage step; the Backtest Engine works on the same real dataset to keep configs honest.</p></div></details>
+    <details class="acc" data-reveal><summary>Where can I verify onchain?</summary><div class="acc-body"><p>The vault account is public on <a href="{{solscan_vault}}" target="_blank" rel="noopener noreferrer">Solscan ↗</a>, trades live in <a href="{{airtrack}}" target="_blank" rel="noopener noreferrer">AIRTrack ↗</a>, and every season report links back where possible: see <a href="/proof/">Proof</a>.</p></div></details>
+    <details class="acc" data-reveal><summary>How can partners integrate?</summary><div class="acc-body"><p>White-label agents, partner-branded AIRi avatars, sponsored segments and community bot deployments: see <a href="/partners/">Partners</a> and <a href="{{contact}}" target="_blank" rel="noopener noreferrer">contact AIRewardrop ↗</a>.</p></div></details>
+    <details class="acc" data-reveal><summary>Is this financial advice?</summary><div class="acc-body"><p>No. Nothing on this site is financial advice. AIR3 and AIRTrading are experimental AI-assisted trading products.</p></div></details>
+
+    <div class="cta-row mt-4" data-reveal>
+      <a class="btn btn-primary" href="/manual/">Read the full Manual <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="{{tg_comm}}" target="_blank" rel="noopener noreferrer">Ask in Telegram</a>
+    </div>
+  </div>
+</section>

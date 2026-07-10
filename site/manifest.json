@@ -1,0 +1,13 @@
+{
+  "name": "AIR3 | AI Trading Agent on Solana",
+  "short_name": "AIR3",
+  "description": "Execution-native AI trading agent on Solana by AIRewardrop.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#04060b",
+  "theme_color": "#04060b",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

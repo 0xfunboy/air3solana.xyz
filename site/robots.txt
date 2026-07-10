@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://air3solana.xyz/sitemap.xml

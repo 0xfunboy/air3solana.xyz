@@ -1,0 +1,78 @@
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>AIRTrack</span>
+    <h1 data-reveal><span class="grad-silver">Not trust-me-bro.</span><br><span class="grad-blue">Track the loop.</span></h1>
+    <p class="lead" data-reveal>AIRTrack exists because AIR3 should be measured, not believed. Every strategy, signal and result leaves a visible trail: trade states, PnL, history and links back to the chain.</p>
+    <div class="cta-row" data-reveal>
+      <a class="btn btn-blue btn-lg" href="{{airtrack}}" target="_blank" rel="noopener noreferrer">Open AIRTrack <span class="arr">→</span></a>
+      <a class="btn btn-ghost btn-lg" href="/proof/">Onchain proof</a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow blue">Trade lifecycle</span>
+        <h2>Four states. Zero ambiguity.</h2>
+        <p class="lead">Every signal the agent produces is accounted for, including the ones it decides <em>not</em> to trade.</p>
+        <div class="stages mt-3">
+          <div class="stage s1"><b>Pending</b><span>Signal validated, order staged, awaiting execution conditions.</span></div>
+          <div class="stage s2"><b>Open</b><span>Position live on the venue with entry, TP and SL recorded.</span></div>
+          <div class="stage s4"><b>Closed</b><span>Result realized and written into PnL history.</span></div>
+          <div class="stage s3"><b>Discarded</b><span>Setup invalidated before entry. Logged, not hidden.</span></div>
+        </div>
+      </div>
+      <div class="term" data-reveal="right" aria-label="AIRTrack performance strip, live data">
+        <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>Performance Strip</b><span class="badge badge-live"><span class="dot"></span>Live · All Time</span></div>
+        <div class="term-body">
+          <dl class="readout">
+            <div><dt>Total trades</dt><span class="fill"></span><dd data-live="tk_total"></dd></div>
+            <div><dt>Open · pending</dt><span class="fill"></span><dd data-live="tk_open_pending"></dd></div>
+            <div><dt>Closed</dt><span class="fill"></span><dd data-live="tk_closed"></dd></div>
+            <div><dt>Discarded</dt><span class="fill"></span><dd class="val-dim" data-live="tk_discarded"></dd></div>
+            <div><dt>Realized PnL</dt><span class="fill"></span><dd data-live="tk_pnl"></dd></div>
+            <div><dt>Tracking live for</dt><span class="fill"></span><dd class="val-blue" data-live="tk_since"></dd></div>
+          </dl>
+          <p class="xsmall val-dim" style="margin:14px 0 0">Live from the AIRdApp backend, refreshed on every visit. Equity curve baseline: Dec 23, 2025.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Coverage</span>
+      <h2>What AIRTrack records.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card" data-reveal><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M7.5 15.5l3.5-4 3 2.5 4.5-6"/></svg></div><h3>Live &amp; realized PnL</h3><p>Percentage PnL per trade and cumulative over the whole record, with unrealized PnL on open positions.</p></div>
+      <div class="card" data-reveal><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7.5h8M8 11.5h8M8 15.5h5"/></svg></div><h3>Complete signal record</h3><p>Every signal since the first tracked trade, timestamped with entry, exit and outcome. AIRTrack has no seasons and no deposits: it is the pure trading record.</p></div>
+      <div class="card" data-reveal><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7.5 15h4"/></svg></div><h3>AIRTrading feed</h3><p>Vault execution trades flow through the same lifecycle, and the weekly season reports on the AIRTrading side are built on this data.</p></div>
+      <div class="card" data-reveal><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14.5 20.5 3M14.5 3h6v6"/><path d="M19 13.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5.5"/></svg></div><h3>Shareable closed trades</h3><p>Closed positions render as shareable cards: the same data behind the public season reports.</p></div>
+      <div class="card" data-reveal><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13.5a4 4 0 0 0 6 .5l2.5-2.5a4 4 0 0 0-5.7-5.7L11.5 7"/><path d="M14 10.5a4 4 0 0 0-6-.5L5.5 12.5a4 4 0 0 0 5.7 5.7L12.5 17"/></svg></div><h3>Onchain proof links</h3><p>Season summaries link to Solscan transfers, buyback transactions and distribution flows wherever possible.</p></div>
+      <div class="card" data-reveal><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4.5"/></svg></div><h3>Simulation vs live</h3><p>AIRTrack tracks the gap between simulated and live execution: the alignment metric that gates leverage scaling.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="hud gridded" data-reveal>
+      <div class="hud-title"><span>Why proof matters</span></div>
+      <div class="grid-2" style="align-items:center">
+        <div>
+          <h3 style="margin-top:0">Copy-trading and signal groups offer no onchain auditability. You trust a name, not a chain.</h3>
+          <p class="muted small" style="margin-bottom:0">AIRTrack connects the narrative to data: trade status, vault accounting, season summaries and Solscan links. When a season report claims a result, the trail is public.</p>
+        </div>
+        <div class="cta-row" style="margin:0; justify-content:flex-end">
+          <a class="btn btn-blue" href="{{airtrack}}" target="_blank" rel="noopener noreferrer">Open AIRTrack ↗</a>
+          <a class="btn btn-ghost" href="{{solscan_vault}}" target="_blank" rel="noopener noreferrer">Vault on Solscan ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

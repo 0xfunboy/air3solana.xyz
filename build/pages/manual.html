@@ -1,0 +1,260 @@
+<section class="page-hero">
+  <div class="wrap">
+    <div class="hero-badges" data-reveal>
+      <span class="badge badge-beta"><span class="dot"></span>Version 1.0 · July 2026 · Mainnet Beta</span>
+    </div>
+    <span class="eyebrow" data-reveal>User Manual</span>
+    <h1 data-reveal><span class="grad-silver">AIRTrading</span> <span class="grad-blue">User Manual.</span></h1>
+    <p class="lead" data-reveal>How to deposit into the vault, follow the weekly season cycle, book your exit, claim your capital, and understand how profits are distributed.</p>
+    <div class="cta-row" data-reveal>
+      <a class="btn btn-primary" href="{{dapp}}" target="_blank" rel="noopener noreferrer">Open AIRTrading <span class="arr">→</span></a>
+      <a class="btn btn-ghost" href="{{manual_pdf}}">Download PDF</a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap manual-layout">
+
+    <!-- ============ TOC ============ -->
+    <nav class="toc" data-toc aria-label="Manual contents">
+      <b>Contents</b>
+      <a href="#what-is">1 · What is AIRTrading</a>
+      <a href="#connect">2 · Connect your wallet</a>
+      <a href="#dashboard">3 · Reading the dashboard</a>
+      <a href="#deposit">4 · How to deposit</a>
+      <a href="#seasons">5 · The weekly season cycle</a>
+      <a href="#exit-claim">6 · How to exit and claim</a>
+      <a href="#profits">7 · Profit distribution &amp; buyback</a>
+      <a href="#monitoring">8 · Monitoring &amp; quick answers</a>
+      <a href="#risk">9 · Risk &amp; mainnet beta notes</a>
+      <div class="toc-dl"><a class="btn btn-ghost btn-sm" href="{{manual_pdf}}" style="width:100%">PDF version ↓</a></div>
+    </nav>
+
+    <div>
+      <!-- ============ 1 · WHAT IS ============ -->
+      <article class="manual-section" id="what-is" data-toc-section>
+        <h2><span class="no">SEC 01</span> What is AIRTrading</h2>
+        <p class="muted">AIRTrading is the automated trading module of the AIRdApp. It runs on a proprietary on-chain vault model on Solana. The AIR3 AI Agent scans approved signals and executes automated perp trades on Pacifica. Trade size adapts to vault liquidity, so PnL is tracked as a <b style="color:var(--text)">size-weighted average</b> across all participants.</p>
+        <p class="muted">You do not trade yourself. You deposit USDC into the shared vault, the agent trades for the whole vault, and results are settled once per week at the end of each <b style="color:var(--text)">season</b>. Positive PnL routes a protocol fee to treasury and the remainder to the AIR3 buyback, which is then split between you and the protocol.</p>
+
+        <h3>Key concepts</h3>
+        <dl class="kv mt-2">
+          <dt>Vault</dt><dd>Shared pool of USDC managed by the AIR3 agent on Pacifica.</dd>
+          <dt>Season</dt><dd>One weekly trading cycle. All capital moves happen at the weekly cutoff.</dd>
+          <dt>Receipt units</dt><dd>Minted to your wallet when you deposit. They represent your share of the vault.</dd>
+          <dt>Pending</dt><dd>Deposited capital waiting for the next season to start. It does not trade yet.</dd>
+          <dt>Active</dt><dd>Capital that is live in the current season and exposed to weekly PnL.</dd>
+          <dt>Exit booked</dt><dd>Capital you asked to withdraw. It keeps trading until the current season settles.</dd>
+          <dt>Claimable</dt><dd>Capital that finished its exit cycle and is ready to be claimed to your wallet.</dd>
+        </dl>
+      </article>
+
+      <!-- ============ 2 · CONNECT ============ -->
+      <article class="manual-section" id="connect" data-toc-section>
+        <h2><span class="no">SEC 02</span> Connect your wallet</h2>
+        <ol class="step-list">
+          <li><b>Expand Vault Mission Control</b>Go to the <a href="{{dapp}}" target="_blank" rel="noopener noreferrer">AIRdApp</a>, select <b>AIRTrading</b> in the top navigation bar, then click the red arrow down on the Vault Mission Control panel to expand the personal dashboard.
+            <div class="video-frame"><video src="/assets/video/manual-connect-720p.mp4" autoplay muted loop playsinline preload="metadata" aria-label="How to expand Vault Mission Control and connect the wallet"></video></div>
+          </li>
+          <li><b>Click Connect</b>Use the red Connect button in the top right corner of the page.</li>
+          <li><b>Choose your Solana wallet</b>Phantom, Solflare, Ledger and Coinbase Wallet are supported. The dApp runs on Solana Mainnet.</li>
+          <li><b>Unlock and approve</b>Unlock your wallet and approve the connection. Then authenticate the session in the dApp: this unlocks your live USDC balance, the MAX buttons and all capital actions.</li>
+        </ol>
+        <div class="callout"><b>Note:</b> until your wallet is connected and authenticated, the Deposit, Book Exit and Claim actions show <span class="mono" style="color:var(--yellow)">WAITING</span> and balances show a dash. Nothing is wrong: connect first, then act.</div>
+      </article>
+
+      <!-- ============ 3 · DASHBOARD ============ -->
+      <article class="manual-section" id="dashboard" data-toc-section>
+        <h2><span class="no">SEC 03</span> Reading the dashboard</h2>
+        <p class="muted">The <b style="color:var(--text)">Vault Mission Control</b> panel at the top shows the health of the whole vault in real time, split into three rows: Vault, Seasons and History.</p>
+
+        <div class="term mt-2" aria-label="Vault Mission Control panel with live values">
+          <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>Vault Mission Control</b><span class="badge badge-live"><span class="dot"></span>Live · Mainnet-Beta</span></div>
+          <div class="term-body">
+            <dl class="readout">
+              <div><dt>Vault Capital</dt><span class="fill"></span><dd data-live="vault_capital"></dd></div>
+              <div><dt>Active This Season</dt><span class="fill"></span><dd data-live="active_season"></dd></div>
+              <div><dt>Global Vault PnL</dt><span class="fill"></span><dd data-live="global_pnl"></dd></div>
+              <div><dt>Current Season PnL</dt><span class="fill"></span><dd data-live="season_pnl"></dd></div>
+              <div><dt>Seasons Closed · Result</dt><span class="fill"></span><dd data-live="seasons_pl"></dd></div>
+              <div><dt>Seasons · Win Rate</dt><span class="fill"></span><dd class="val-blue" data-live="seasons_wr"></dd></div>
+              <div><dt>Season Ends In</dt><span class="fill"></span><dd class="val-yellow" data-live="season_ends"></dd></div>
+              <div><dt>Buyback USDC Routed</dt><span class="fill"></span><dd data-live="buyback"></dd></div>
+            </dl>
+            <p class="xsmall val-dim" style="margin:12px 0 0">Live values from the AIRdApp backend, the same panel you will see in the dApp.</p>
+          </div>
+        </div>
+
+        <dl class="kv mt-3">
+          <dt>Vault Capital</dt><dd>Total USDC currently accounted inside the vault.</dd>
+          <dt>Active This Season</dt><dd>Capital that is live and trading in the current season.</dd>
+          <dt>Global / Season PnL</dt><dd>Profit and loss of the vault, all-time and for the current season.</dd>
+          <dt>Season Ends In</dt><dd>Countdown to the next weekly cutoff, when the season settles.</dd>
+          <dt>Win Rate</dt><dd>Share of closed seasons that ended in profit.</dd>
+          <dt>Treasury / Buyback</dt><dd>Cumulative fees collected and USDC routed to the AIR3 buyback.</dd>
+        </dl>
+
+        <h3>Performance strip</h3>
+        <p class="muted small">Below Mission Control, the Performance strip counts every trade the agent has ever opened: open, pending, closed and discarded trades, plus the realized PnL percentage. Right now: <span class="mono"><span data-live="tk_total"></span> total · <span data-live="tk_closed"></span> closed · <span data-live="tk_discarded"></span> discarded · <span data-live="tk_pnl"></span></span></p>
+
+        <h3>Your personal panels</h3>
+        <p class="muted small" style="margin-bottom:0">Once connected, two personal panels appear: <b style="color:var(--text)">Current Season Active Capital</b> (vault-wide accounting) and <b style="color:var(--text)">My Season Position</b> (your own numbers: receipt balance, active capital, live PnL, pending deposits and claimable capital).</p>
+      </article>
+
+      <!-- ============ 4 · DEPOSIT ============ -->
+      <article class="manual-section" id="deposit" data-toc-section>
+        <h2><span class="no">SEC 04</span> How to deposit</h2>
+        <ol class="step-list">
+          <li><b>Enter a USDC amount</b>In the <b>Deposit Into Vault</b> panel, type the amount or press MAX. Respect the limits shown in the panel.</li>
+          <li><b>Press Deposit and confirm</b>Approve the transaction in your wallet. Receipt units are minted to your wallet immediately.</li>
+          <li><b>Wait for the weekly cutoff</b>Your capital stays pending until the next weekly season starts. Pending capital does not trade, does not earn weekly PnL, and is not routed to the executor or Pacifica yet.</li>
+          <li><b>Capital becomes active</b>At the next weekly cutoff your deposit activates and starts participating from the next season. From that moment it follows the vault PnL.</li>
+        </ol>
+
+        <div class="term mt-2" aria-label="Deposit panel recreation">
+          <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>Deposit Into Vault</b><span class="badge badge-blue"><span class="dot"></span>Gate Status</span></div>
+          <div class="term-body">
+            <dl class="readout">
+              <div><dt>Min Deposit</dt><span class="fill"></span><dd>10 USDC</dd></div>
+              <div><dt>Max Deposit</dt><span class="fill"></span><dd>500 USDC</dd></div>
+              <div><dt>Whitelist Policy</dt><span class="fill"></span><dd class="val-yellow">ON / NOT LISTED</dd></div>
+              <div><dt>AIR3 Threshold</dt><span class="fill"></span><dd>1,000,000 AIR3</dd></div>
+              <div><dt>Wallet USDC Available</dt><span class="fill"></span><dd class="val-dim">connect to unlock</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <h3>Deposit rules</h3>
+        <div class="tbl-wrap mt-2">
+          <table class="tbl">
+            <tbody>
+              <tr><td>Min deposit</td><td><b>10 USDC</b></td></tr>
+              <tr><td>Max deposit</td><td><b>500 USDC</b> (per wallet, mainnet beta limit)</td></tr>
+              <tr><td>Whitelist policy</td><td>When ON, only listed wallets can deposit. Holding at least the AIR3 threshold (currently <b>1,000,000 AIR3</b>) also qualifies.</td></tr>
+              <tr><td>Timing</td><td>Deposit any time. Activation always happens at the next weekly cutoff, shown as <b>Next Weekly Cutoff</b> in Season Capital Status.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout warn"><b>Important:</b> new deposits enter at the next global season index. They do <b>not</b> inherit losses from older season windows. You only start counting PnL from the season you activate in.</div>
+      </article>
+
+      <!-- ============ 5 · SEASONS ============ -->
+      <article class="manual-section" id="seasons" data-toc-section>
+        <h2><span class="no">SEC 05</span> The weekly season cycle</h2>
+        <p class="muted">Everything in AIRTrading moves on a weekly clock. Your capital always follows the same four stages:</p>
+        <div class="stages mt-2">
+          <div class="stage s1"><b>Deposit</b><span>pending</span></div>
+          <div class="stage s2"><b>Active</b><span>trading weekly PnL</span></div>
+          <div class="stage s3"><b>Exit booked</b><span>last season running</span></div>
+          <div class="stage s4"><b>Claimable</b><span>ready to withdraw</span></div>
+        </div>
+
+        <h3>The nine rules of the Weekly Season Flow</h3>
+        <ol class="step-list">
+          <li><b>Deposit mints receipts immediately</b>The capital, however, remains <span style="color:var(--yellow)">pending</span>.</li>
+          <li><b>Pending activates at the weekly cutoff</b>and starts participating from the next season.</li>
+          <li><b>Book exit during the current week</b>to leave after settlement, while still participating through the current season.</li>
+          <li><b>Booked capital becomes claimable</b>only after the next season opens; it moves into the isolated claimable reserve.</li>
+          <li><b>Positive PnL is extracted at settlement</b>1% retained for treasury (minimum $0.10) before routing the remainder to AIR3 Buyback.</li>
+          <li><b>Buyback runs above the swap threshold</b>Currently $5. Below that, funds stay in the vault and roll to the next season.</li>
+          <li><b>Bought AIR3 splits 50/50</b>50% to users and 50% to treasury, automatically after buyback at settlement.</li>
+          <li><b>Claim is a separate user action</b>it unlocks once the booked exit has rolled into the next season.</li>
+          <li><b>Losses stay inside capital</b>through the global season index; new deposits enter at the next index and do not inherit older loss windows.</li>
+        </ol>
+        <div class="callout"><b>Losses:</b> negative weeks are not socialized to new users. Losses stay inside capital through the <b>global season index</b>. Your position tracks the index from the season you entered.</div>
+      </article>
+
+      <!-- ============ 6 · EXIT & CLAIM ============ -->
+      <article class="manual-section" id="exit-claim" data-toc-section>
+        <h2><span class="no">SEC 06</span> How to exit and claim</h2>
+        <p class="muted">Withdrawing is a two-step process aligned to the season cycle: first you <b style="color:var(--text)">book the exit</b>, then, one season later, you <b style="color:var(--text)">claim the capital</b>. This unlock delay exists because your capital keeps trading until the current season settles.</p>
+        <ol class="step-list">
+          <li><b>Book your exit</b>Enter the receipt amount to withdraw (or press MAX) and click <b>Book Exit</b>. The Exit Preview box shows the estimated capital being booked. You keep participating in the current season until the weekly cutoff.</li>
+          <li><b>Wait one season rollover</b>At settlement your booked capital stops trading. When the next season opens, it is moved into the isolated claimable reserve. Track this in Season Capital Status: <span class="mono xsmall">Booked Exit Claimable Season</span> and <span class="mono xsmall">Booked Exit Claimable At</span>.</li>
+          <li><b>Claim your capital</b>When Claimable Capital is greater than zero, the <b>Claim Capital</b> button unlocks. Click it and confirm in your wallet. The claim settles your available payout, accrued rewards and your share of the AIR3 buyback distribution.</li>
+        </ol>
+        <div class="callout"><b>Timing example:</b> you book an exit on Tuesday. Your capital trades until the weekly cutoff, then stops. When the following season opens, it becomes claimable and you can withdraw it. Worst case, the full path takes about <b>two weekly cutoffs</b>.</div>
+      </article>
+
+      <!-- ============ 7 · PROFITS ============ -->
+      <article class="manual-section" id="profits" data-toc-section>
+        <h2><span class="no">SEC 07</span> Profit distribution and AIR3 buyback</h2>
+        <p class="muted">Rewards are <b style="color:var(--text)">settlement-based</b>: computed once per week when the season closes. This is what happens to positive weekly PnL, in order:</p>
+        <ol class="step-list">
+          <li><b>Treasury fee</b>1% of the weekly positive PnL is retained for treasury, with a minimum of $0.10.</li>
+          <li><b>Routing to buyback</b>The remainder is routed to the AIR3 buyback: the protocol buys AIR3 on the market with that USDC.</li>
+          <li><b>Minimum swap threshold</b>The buyback runs only if routed funds reach the minimum swap threshold (currently $5). Below that, funds stay in the vault and roll over to the next season.</li>
+          <li><b>50 / 50 split</b>Bought AIR3 is split automatically at settlement: 50% to users (pro rata to active capital) and 50% to treasury.</li>
+          <li><b>Delivery at claim</b>Your accrued AIR3 rewards are delivered when you claim. Capital claim does not include reward flow that was already distributed.</li>
+        </ol>
+
+        <div class="hud gridded mt-2">
+          <div class="hud-title"><span>Reward routing · at settlement</span></div>
+          <div class="flow-strip">
+            <div class="node"><div class="icon-ring green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M7.5 15.5l3.5-4 3 2.5 4.5-6"/></svg></div><b>Positive PnL</b></div>
+            <div class="link"></div>
+            <div class="node"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9.5 21v-6h5v6"/></svg></div><b>1% Treasury</b></div>
+            <div class="link"></div>
+            <div class="node"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 3.5V8h-4.5"/></svg></div><b>AIR3 Buyback</b></div>
+            <div class="link"></div>
+            <div class="node"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M2.5 19c.8-2.8 2.9-4.2 5.5-4.2s4.7 1.4 5.5 4.2M14.5 14.9c2.3.1 4.1 1.4 4.9 3.6"/></svg></div><b>50% Users</b></div>
+            <div class="link"></div>
+            <div class="node"><div class="icon-ring red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/></svg></div><b>50% Treasury</b></div>
+          </div>
+        </div>
+        <div class="callout ok"><b>In short:</b> profitable weeks buy AIR3. Half of the bought AIR3 goes to depositors, half to the protocol treasury. Losing weeks simply reduce the season index: there is no fee on losses.</div>
+      </article>
+
+      <!-- ============ 8 · MONITORING ============ -->
+      <article class="manual-section" id="monitoring" data-toc-section>
+        <h2><span class="no">SEC 08</span> Monitoring and quick answers</h2>
+        <p class="muted">The <b style="color:var(--text)">Season Capital Status</b> panel is your single source of truth for timing: current season index, next weekly cutoff, countdown, and the exact season and date when your pending deposit activates or your booked exit becomes claimable.</p>
+
+        <div class="term mt-2" aria-label="Season capital status recreation">
+          <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>Season Capital Status</b></div>
+          <div class="term-body">
+            <dl class="readout">
+              <div><dt>Current Season Index</dt><span class="fill"></span><dd>17</dd></div>
+              <div><dt>Next Weekly Cutoff</dt><span class="fill"></span><dd>11/07/2026 · 01:59:00</dd></div>
+              <div><dt>Season Ends In</dt><span class="fill"></span><dd class="val-yellow">2d 22h 3m 24s</dd></div>
+              <div><dt>Pending Deposit Activates At</dt><span class="fill"></span><dd class="val-dim">not set</dd></div>
+              <div><dt>Booked Exit Claimable At</dt><span class="fill"></span><dd class="val-dim">not set</dd></div>
+              <div><dt>Protocol Split</dt><span class="fill"></span><dd>50% USER / 50% TREASURY</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <h3>Quick answers</h3>
+        <div class="tbl-wrap mt-2">
+          <table class="tbl">
+            <thead><tr><th>Situation</th><th>Answer</th></tr></thead>
+            <tbody>
+              <tr><td>I deposited but nothing is trading</td><td>Normal. Deposits are pending until the next weekly cutoff. Check <b>Pending Deposit Activates At</b>.</td></tr>
+              <tr><td>Book Exit is disabled</td><td>You need a receipt balance and an authenticated wallet session. Connect and authenticate first.</td></tr>
+              <tr><td>Claim shows no claimable capital</td><td>Your booked exit becomes claimable only after the next season opens. Check <b>Booked Exit Claimable At</b>.</td></tr>
+              <tr><td>No buyback happened this week</td><td>Routed funds were below the $5 minimum swap threshold. They stay in the vault and roll to next week.</td></tr>
+              <tr><td>Can I lose money?</td><td><b>Yes.</b> The agent trades perps and seasons can close in loss. Losses reduce the season index and therefore your capital. Only deposit what you can afford to risk.</td></tr>
+              <tr><td>Where do my AIR3 rewards go?</td><td>They accrue at each profitable settlement and are delivered when you claim.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- ============ 9 · RISK ============ -->
+      <article class="manual-section" id="risk" data-toc-section>
+        <h2><span class="no">SEC 09</span> Risk and mainnet beta notes</h2>
+        <div class="hud red mt-2">
+          <div class="hud-title"><span class="t-red">Mainnet Beta</span></div>
+          <p class="muted small">Deposit limits (10 to 500 USDC), the whitelist policy and thresholds may change as the vault matures. <b style="color:var(--text)">The values shown in the dApp panels are always the ones in force.</b></p>
+          <p class="muted small">AIRTrading executes real perp trades with real capital. Seasons can close in loss; losses reduce the season index and therefore your capital. There is no guaranteed return, and alpha season performance is not a promise of future results.</p>
+          <p class="muted small" style="margin-bottom:0">Only deposit what you can afford to risk. Nothing in this manual is financial advice. Read the <a href="/legal/risk.html">full risk disclosure</a>.</p>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="{{dapp}}" target="_blank" rel="noopener noreferrer">Open AIRTrading <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="/faq/">More questions? FAQ</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

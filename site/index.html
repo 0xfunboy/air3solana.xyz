@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIR3 | Execution-Native AI Trading Agent on Solana</title>
+  <meta name="description" content="AIR3 is a Solana AI trading product by AIRewardrop: live market intelligence, AIRTrading vault execution, AIRTrack proof and AIR3 buyback/distribution flows in one system.">
+  <link rel="canonical" href="https://air3solana.xyz/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#04060b">
+  <meta property="og:site_name" content="AIR3">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AIR3 | Execution-Native AI Trading Agent on Solana">
+  <meta property="og:description" content="AIR3 is a Solana AI trading product by AIRewardrop: live market intelligence, AIRTrading vault execution, AIRTrack proof and AIR3 buyback/distribution flows in one system.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://air3solana.xyz/">
+  <meta property="og:image" content="https://air3solana.xyz/assets/img/og-air3.png">
+  <meta property="og:image:secure_url" content="https://air3solana.xyz/assets/img/og-air3.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AIR3: Execution-Native AI Trading Agent on Solana, by AIRewardrop">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AIRewardrop">
+  <meta name="twitter:title" content="AIR3 | Execution-Native AI Trading Agent on Solana">
+  <meta name="twitter:description" content="AIR3 is a Solana AI trading product by AIRewardrop: live market intelligence, AIRTrading vault execution, AIRTrack proof and AIR3 buyback/distribution flows in one system.">
+  <meta name="twitter:image" content="https://air3solana.xyz/assets/img/og-air3.png">
+  <meta name="twitter:image:alt" content="AIR3: Execution-Native AI Trading Agent on Solana, by AIRewardrop">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AIR3",
+    "url": "https://air3solana.xyz",
+    "logo": "https://air3solana.xyz/assets/icons/icon-512.png",
+    "description": "Execution-native AI trading agent on Solana by AIRewardrop.",
+    "parentOrganization": { "@type": "Organization", "name": "AIRewardrop", "url": "https://airewardrop.xyz" },
+    "sameAs": [
+      "https://x.com/AIRewardrop",
+      "https://t.me/AIRewardrop",
+      "https://t.me/AIR3Community",
+      "https://www.twitch.tv/airewardrop",
+      "https://www.youtube.com/@AIRewardrop",
+      "https://www.tiktok.com/@airewardrop",
+      "https://www.instagram.com/airewardrop/"
+    ]
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="hud-frame" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i></div>
+<header class="site-header" data-header>
+  <a class="brand" href="/" aria-label="AIR3 home">
+    <img class="brand-emblem" src="/assets/logos/air3-emblem.png" alt="" width="38" height="38">
+    <span class="brand-text"><b>AIR<em>3</em></b><small>by AIRewardrop</small></span>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-link" href="/product/">Product</a><a class="nav-link" href="/airtrading/">AIRTrading</a><a class="nav-link" href="/airtrack/">AIRTrack</a><a class="nav-link" href="/airi/">AIRi</a><a class="nav-link" href="/live/">Live</a><a class="nav-link" href="/roadmap/">Roadmap</a><a class="nav-link" href="/token/">Token</a><a class="nav-link" href="/proof/">Proof</a>
+    <a class="nav-link extra" href="/manual/">Deposit Guide</a>
+    <a class="nav-link extra" href="/partners/">Partners</a>
+    <a class="nav-link extra" href="/faq/">FAQ</a>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="https://www.twitch.tv/airewardrop" target="_blank" rel="noopener noreferrer">Watch Live</a>
+      <a class="btn btn-primary" href="https://airdapp.airewardrop.xyz" target="_blank" rel="noopener noreferrer">Open AIRdApp</a>
+    </div>
+  </nav>
+  <div class="header-actions">
+    <a class="btn btn-ghost btn-sm" href="https://www.twitch.tv/airewardrop" target="_blank" rel="noopener noreferrer">Watch Live</a>
+    <a class="btn btn-primary btn-sm" href="https://airdapp.airewardrop.xyz" target="_blank" rel="noopener noreferrer">Open AIRdApp</a>
+  </div>
+</header>
+<main id="main">
+<!-- ============================== HERO ============================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badges" data-reveal>
+        <span class="badge badge-live"><span class="dot"></span>Live on Solana</span>
+        <span class="badge badge-beta"><span class="dot"></span>AIRTrading Mainnet Beta</span>
+      </div>
+      <h1 data-reveal><span class="grad-silver">AIR3 turns market intelligence</span><br><span class="grad-blue">into on-chain action.</span></h1>
+      <p class="lead" data-reveal>AIR3 is an execution-native AI trading agent on Solana: live social intelligence, AIRTrading vault execution, AIRTrack proof and AIR3 buyback/distribution flows in one product system, already in production.</p>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn-primary btn-lg" href="https://airdapp.airewardrop.xyz" target="_blank" rel="noopener noreferrer">Open AIRdApp <span class="arr">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="/manual/">Deposit Guide</a>
+        <a class="btn btn-ghost btn-lg" href="https://solscan.io/account/EhhE742NXcY36yPr8YJZ8zoj9nfe7MmBQ6K3gjna74EE?page_size=100#transfers" target="_blank" rel="noopener noreferrer">Onchain Proof</a>
+      </div>
+      <div class="pill-row" data-reveal>
+        <span class="pill">Live agent</span><span class="pill">Solana mainnet</span><span class="pill">Pacifica execution</span><span class="pill">Weekly seasons</span><span class="pill">Onchain proof</span>
+      </div>
+    </div>
+
+    <div data-reveal="right">
+      <div class="stream-shell" aria-label="AIR3 live stream on Twitch">
+        <span class="stream-badge"><i></i>LIVE 24/7</span>
+        <iframe
+          title="AIR3 Twitch Live"
+          src="https://player.twitch.tv/?channel=airewardrop&parent=air3solana.xyz&parent=www.air3solana.xyz&parent=localhost&parent=127.0.0.1&autoplay=true&muted=true"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          scrolling="no"
+          referrerpolicy="no-referrer"></iframe>
+      </div>
+      <p class="stream-caption">The agent is streaming right now. Ask in chat: <code>chart $TICKER</code> <code>analysis $TICKER</code> <code>price $TICKER</code></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LIVE VAULT TELEMETRY ============================== -->
+<section class="section tight" style="padding-top:12px">
+  <div class="wrap">
+    <div class="hud gridded" data-reveal>
+      <div class="telemetry-head">
+        <div class="hud-title" style="border:0; padding:0; margin:0"><span>Vault Telemetry</span></div>
+        <span class="badge badge-live"><span class="dot"></span>Live from AIRdApp</span>
+      </div>
+      <div class="telemetry-grid">
+        <div class="stat"><strong data-live="vault_capital"></strong><span>Vault Capital</span><small>USDC accounted in the vault</small></div>
+        <div class="stat"><strong data-live="active_season"></strong><span>Active This Season</span><small>capital trading this week</small></div>
+        <div class="stat"><strong data-live="global_pnl"></strong><span>Global Vault PnL</span><small>all time</small></div>
+        <div class="stat"><strong data-live="season_pnl"></strong><span>Current Season PnL</span><small>this week</small></div>
+        <div class="stat"><strong data-live="seasons_wr"></strong><span>Seasons Closed · Win Rate</span><small>completed seasons</small></div>
+        <div class="stat"><strong data-live="buyback"></strong><span>Buyback USDC Routed</span><small>cumulative</small></div>
+        <div class="stat"><strong data-live="season_ends"></strong><span>Season Ends In</span><small>weekly cutoff countdown</small></div>
+        <div class="stat"><strong data-live="tk_pnl"></strong><span>Realized PnL, AIRTrack</span><small>all-time signal record</small></div>
+      </div>
+      <p class="live-meta" style="margin:14px 0 0">Snapshot <span data-live="fetched_at"></span> · same backend the dApp reads · refreshed on every visit · <a href="/proof/">verify onchain</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TICKER ============================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>AIR3 Agent</span><span>AIRTrading</span><span>AIRTrack</span><span>AIRi</span><span>AIRSocial</span><span>AIRTool</span><span>AIRSponsor</span><span>Weekly Seasons</span><span>Pacifica Execution</span><span>Solana Mainnet</span><span>Buyback &amp; Distribution</span><span>Onchain Proof</span>
+  </div>
+</div>
+
+<!-- ============================== PRODUCT SYSTEM ============================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Product System</span>
+      <h2>Not signals. Not hype.<br><span class="grad-blue">A working execution loop.</span></h2>
+      <p class="lead">AIR3 is not one isolated app. It is the product stack that connects agent intelligence, social distribution, vault execution, onchain tracking and token utility.</p>
+    </div>
+    <div class="grid-4">
+      <a class="card card-wrap" href="/live/" data-reveal>
+        <span class="tag">24/7</span>
+        <div class="icon-ring red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>AIR3 Agent</h3><p>Market intelligence, chart analysis, sentiment and social distribution. The strategy brain.</p>
+      </a>
+      <a class="card card-wrap" href="/airtrading/" data-reveal>
+        <span class="tag">Vault</span>
+        <div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5 12 4l9 4.5M5 10v7M9.5 10v7M14.5 10v7M19 10v7M3 19.5h18"/></svg></div>
+        <h3>AIRTrading</h3><p>Vault-based execution on Pacifica, weekly settlement and buyback/distribution flows.</p>
+      </a>
+      <a class="card card-wrap" href="/airtrack/" data-reveal>
+        <span class="tag">Proof</span>
+        <div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 3.5V7M12 17v3.5M3.5 12H7M17 12h3.5"/></svg></div>
+        <h3>AIRTrack</h3><p>Onchain trade tracking: states, PnL, full history. The verification layer.</p>
+      </a>
+      <a class="card card-wrap" href="/airi/" data-reveal>
+        <span class="tag">Interface</span>
+        <div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13.5a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M4.5 20.5c1.6-3.2 4.3-4.8 7.5-4.8s5.9 1.6 7.5 4.8"/><path d="M17.5 3.8c1.2.9 2 2.2 2.3 3.7M6.5 3.8c-1.2.9-2 2.2-2.3 3.7"/></svg></div>
+        <h3>AIRi</h3><p>Voice, chat and 3D avatar interface for wallet-authenticated sessions.</p>
+      </a>
+      <a class="card card-wrap" href="/product/#airsocial" data-reveal>
+        <span class="tag">Missions</span>
+        <div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-11 6.6L4 19.5l1.4-4.5a7.5 7.5 0 1 1 14.6-3.5z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg></div>
+        <h3>AIRSocial</h3><p>Community engagement missions and measurable social analytics.</p>
+      </a>
+      <a class="card card-wrap" href="/product/#airtool" data-reveal>
+        <span class="tag">Deploy</span>
+        <div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 12a7.4 7.4 0 0 0-.1-1.2l2-1.5-2-3.5-2.4 1a7.4 7.4 0 0 0-2-1.2L14.5 2h-5l-.4 2.6a7.4 7.4 0 0 0-2 1.2l-2.4-1-2 3.5 2 1.5a7.4 7.4 0 0 0 0 2.4l-2 1.5 2 3.5 2.4-1a7.4 7.4 0 0 0 2 1.2l.4 2.6h5l.4-2.6a7.4 7.4 0 0 0 2-1.2l2.4 1 2-3.5-2-1.5c.1-.4.1-.8.1-1.2z"/></svg></div>
+        <h3>AIRTool</h3><p>Token-gated AIR3 agent deployments for Telegram and Discord communities.</p>
+      </a>
+      <a class="card card-wrap" href="/product/#airsponsor" data-reveal>
+        <span class="tag">B2B</span>
+        <div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5v3a1.5 1.5 0 0 0 1.5 1.5H7l7 4.5v-15L7 9H4.5A1.5 1.5 0 0 0 3 10.5z"/><path d="M17.5 9.5a4 4 0 0 1 0 5M20 7.5a7.5 7.5 0 0 1 0 9"/></svg></div>
+        <h3>AIRSponsor</h3><p>Sponsored live segments and branded drops powered by $AIR3.</p>
+      </a>
+      <a class="card card-wrap" href="/product/" data-reveal>
+        <span class="tag">Hub</span>
+        <div class="icon-ring green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg></div>
+        <h3>AIRdApp</h3><p>The operational hub where every module lives. One login, one ecosystem.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW IT WORKS ============================== -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow blue">How it works</span>
+      <h2>One continuous trading workflow.</h2>
+      <p class="lead">AIR3 collapses the fragmented crypto workflow into a single loop that runs every week.</p>
+    </div>
+    <div class="hud gridded" data-reveal>
+      <div class="steps">
+        <div class="step"><b>Signal</b><span>The agent reads market data, social sentiment and onchain context.</span></div>
+        <div class="step"><b>Analysis</b><span>Chart, setup, risk framework, trade logic and public commentary.</span></div>
+        <div class="step"><b>Execution</b><span>AIRTrading routes approved vault execution through Pacifica.</span></div>
+        <div class="step"><b>Tracking</b><span>AIRTrack records trade states, PnL, seasons and history.</span></div>
+        <div class="step"><b>Settlement</b><span>Positive PnL routes into treasury, AIR3 buyback and pro-rata distribution.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AIRTRADING PREVIEW ============================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow">AIRTrading</span>
+        <h2>Vault execution for AIR3 trades.</h2>
+        <p class="lead">Deposit USDC into the shared Solana vault. AIR3 executes approved perp strategies through the executor. Seasons settle weekly. Positive PnL routes through treasury, AIR3 buyback and pro-rata distribution.</p>
+        <div class="stages mt-3">
+          <div class="stage s1"><b>Pending</b><span>Deposit waits for the next weekly cutoff.</span></div>
+          <div class="stage s2"><b>Active</b><span>Capital trades and follows weekly PnL.</span></div>
+          <div class="stage s3"><b>Exit booked</b><span>Keeps trading until the season settles.</span></div>
+          <div class="stage s4"><b>Claimable</b><span>Ready to withdraw to your wallet.</span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/airtrading/">Explore AIRTrading <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="/airtrading/#backtest">Backtest Engine</a>
+        </div>
+      </div>
+      <div class="hud" data-reveal="right">
+        <div class="hud-title"><span>Mainnet Beta · Current Rules</span><span class="t-red">dApp is authoritative</span></div>
+        <dl class="readout">
+          <div><dt>Min deposit</dt><span class="fill"></span><dd>10 USDC</dd></div>
+          <div><dt>Max deposit</dt><span class="fill"></span><dd>500 USDC / wallet</dd></div>
+          <div><dt>Activation</dt><span class="fill"></span><dd>next weekly cutoff</dd></div>
+          <div><dt>Settlement</dt><span class="fill"></span><dd>weekly · season close</dd></div>
+          <div><dt>Execution venue</dt><span class="fill"></span><dd class="val-blue">Pacifica perp DEX</dd></div>
+          <div><dt>Strategy R&amp;D</dt><span class="fill"></span><dd class="val-blue">Backtest Engine on real data</dd></div>
+          <div><dt>Reward split</dt><span class="fill"></span><dd>50% users · 50% treasury</dd></div>
+          <div><dt>Losses</dt><span class="fill"></span><dd class="neg">possible, real trading risk</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== AIRTRACK PREVIEW ============================== -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="split rev">
+      <div data-reveal="right">
+        <span class="eyebrow blue">AIRTrack</span>
+        <h2>Not trust-me-bro.<br>Track the loop.</h2>
+        <p class="lead">AIRTrack is the verification layer for trades, PnL and execution states, live since December 2025. Every result should be measurable, visible and linked back to onchain proof.</p>
+        <div class="cta-row">
+          <a class="btn btn-blue" href="/airtrack/">Open the proof layer <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="/proof/">Season proof</a>
+        </div>
+      </div>
+      <div class="term" data-reveal="left" aria-label="AIRTrack lifetime performance, live data">
+        <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>AIRTrack · Performance</b><span class="badge badge-live"><span class="dot"></span>Live · All Time</span></div>
+        <div class="term-body">
+          <dl class="readout">
+            <div><dt>Total trades</dt><span class="fill"></span><dd data-live="tk_total"></dd></div>
+            <div><dt>Open · pending</dt><span class="fill"></span><dd data-live="tk_open_pending"></dd></div>
+            <div><dt>Closed trades</dt><span class="fill"></span><dd data-live="tk_closed"></dd></div>
+            <div><dt>Discarded signals</dt><span class="fill"></span><dd class="val-dim" data-live="tk_discarded"></dd></div>
+            <div><dt>Realized PnL</dt><span class="fill"></span><dd data-live="tk_pnl"></dd></div>
+            <div><dt>Tracking live for</dt><span class="fill"></span><dd class="val-blue" data-live="tk_since"></dd></div>
+          </dl>
+          <p class="xsmall val-dim" style="margin:14px 0 0">Live from the AIRdApp backend. Alpha data, not a yield promise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== LIVE DISTRIBUTION ============================== -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow blue">Live Agent</span>
+        <h2>AIR3 is also a live distribution engine.</h2>
+        <p class="lead">The agent posts market analysis, answers commands in social channels, streams as a live meta-human and routes attention back into the product loop.</p>
+        <div class="pill-row">
+          <span class="pill">X</span><span class="pill">Telegram</span><span class="pill">Discord</span><span class="pill">Twitch</span><span class="pill">YouTube</span><span class="pill">X Live</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/live/">Live channels <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="https://www.twitch.tv/airewardrop" target="_blank" rel="noopener noreferrer">Watch the stream</a>
+        </div>
+      </div>
+      <div class="term" data-reveal="right" aria-label="Example agent commands">
+        <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>AIR3 · Command Console</b><span class="badge badge-live"><span class="dot"></span>24/7</span></div>
+        <div class="term-body">
+          <ul class="cmd-list">
+            <li>chart $SOL<span>1H setup + indicators</span></li>
+            <li>price $BTC<span>live quote</span></li>
+            <li>market analysis $ETH<span>full breakdown</span></li>
+            <li>most mentioned ticker on X today<span>trend scan</span></li>
+            <li>show me a chart for &lt;contract address&gt;<span>any SPL token</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TOKEN ============================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="hud red gridded" data-reveal>
+      <div class="hud-title"><span class="t-red">$AIR3 Utility</span><span>Solana · SPL</span></div>
+      <div class="split" style="align-items:start; gap:36px">
+        <div>
+          <h2 style="margin-top:4px">$AIR3 is the product key,<br><span class="grad-red">not decoration.</span></h2>
+          <p class="lead">Utility is tied to access, buyback/distribution, agent tooling, social missions and partner sponsorship surfaces. Every module creates demand for the token.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/token/">Token utility <span class="arr">→</span></a>
+            <a class="btn btn-ghost" href="https://dexscreener.com/solana/2jvsWRkT17ofmv9pkW7ofqAFWSCNyJYdykJ7kPKbmoon" target="_blank" rel="noopener noreferrer">Chart</a>
+            <a class="btn btn-ghost" href="https://solscan.io/token/2jvsWRkT17ofmv9pkW7ofqAFWSCNyJYdykJ7kPKbmoon" target="_blank" rel="noopener noreferrer">Solscan</a>
+          </div>
+        </div>
+        <div>
+          <div class="ca-bar">
+            <span class="lbl">Token CA</span>
+            <code id="token-ca">2jvsWRkT17ofmv9pkW7ofqAFWSCNyJYdykJ7kPKbmoon</code>
+            <button class="btn btn-ghost btn-sm btn-copy" type="button" data-copy="#token-ca">Copy</button>
+          </div>
+          <dl class="readout mt-2">
+            <div><dt>AIRTrading</dt><span class="fill"></span><dd>profit → buyback → 50/50 split</dd></div>
+            <div><dt>AIRTool</dt><span class="fill"></span><dd>burn-to-access deployments</dd></div>
+            <div><dt>AIRSponsor</dt><span class="fill"></span><dd>segments paid in $AIR3</dd></div>
+            <div><dt>Access</dt><span class="fill"></span><dd>holder thresholds for beta flows</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== ROADMAP PREVIEW ============================== -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow blue">Roadmap</span>
+      <h2>The launch roadmap is complete.<br><span class="grad-blue">Now it compounds.</span></h2>
+      <p class="lead">Token, agent, dApp, AIRTrack, Pacifica integration and alpha seasons shipped. The current cycle is about validated strategy, execution alignment and controlled scale.</p>
+    </div>
+    <div class="phase-grid" data-reveal>
+      <div class="phase done">
+        <div class="phase-head"><span>Phase 0 · Shipped</span><b>Completed</b></div>
+        <ul><li>AIR3 token live on Solana</li><li>Social / live agent operations</li><li>AIRTrack + AIRdApp beta</li><li>Pacifica Builder integration</li><li>Alpha seasons + Manual v1</li><li>Backtest Engine</li></ul>
+      </div>
+      <div class="phase now">
+        <div class="phase-head"><span>Phase 1 · Now</span><b>Validation</b></div>
+        <ul><li>Mainnet beta seasons</li><li>Backtest Engine in the execution loop</li><li>Trailing follow stop tuning</li><li>Live/sim alignment</li><li>Risk engineering before size</li></ul>
+      </div>
+      <div class="phase next">
+        <div class="phase-head"><span>Phase 2 · Next</span><b>Expansion</b></div>
+        <ul><li>Leverage scaling toward 10x on the validated strategy</li><li>Jupiter spot / routing</li><li>AIRTrading public tiers</li><li>AIRSocial + AIRTool launch</li><li>Seeker / mobile path</li></ul>
+      </div>
+      <div class="phase later">
+        <div class="phase-head"><span>Phase 3 · Later</span><b>Scale</b></div>
+        <ul><li>Multi-venue execution</li><li>Multi-vault strategies</li><li>Partner avatars / white-label</li><li>Full DeFi interface suite</li></ul>
+      </div>
+    </div>
+    <div class="cta-row" data-reveal><a class="btn btn-ghost" href="/roadmap/">Full roadmap <span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA ============================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="hud gridded center" style="padding:56px 28px" data-reveal>
+      <span class="eyebrow" style="justify-content:center">Production, not promises</span>
+      <h2 style="max-width:21ch; margin-inline:auto">The agent is live. The dApp is live. <span class="grad-blue">The vault is running.</span></h2>
+      <p class="lead" style="margin-inline:auto">AIR3 is built by AIRewardrop as a production product system in controlled mainnet beta. Verify everything onchain.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn-primary btn-lg" href="https://airdapp.airewardrop.xyz" target="_blank" rel="noopener noreferrer">Open AIRdApp <span class="arr">→</span></a>
+        <a class="btn btn-blue btn-lg" href="https://www.twitch.tv/airewardrop" target="_blank" rel="noopener noreferrer">Watch Live</a>
+        <a class="btn btn-ghost btn-lg" href="https://solscan.io/account/EhhE742NXcY36yPr8YJZ8zoj9nfe7MmBQ6K3gjna74EE?page_size=100#transfers" target="_blank" rel="noopener noreferrer">Onchain Proof</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="footer-brand" href="/"><img src="/assets/logos/air3-emblem.png" alt="AIR3 emblem" width="34" height="34"><b>AIR<em>3</em></b></a>
+        <p class="footer-desc">AIR3 is a Solana AI trading product by AIRewardrop: live agent, vault execution, onchain tracking and product-native token utility.</p>
+        <div class="social-row"><a href="https://x.com/AIRewardrop" target="_blank" rel="noopener noreferrer" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13.9 10.5 21.4 2h-1.8l-6.5 7.4L7.9 2H2l7.9 11.3L2 22.2h1.8l6.9-7.9 5.5 7.9H22l-8.1-11.7zM11.6 13.2l-.8-1.1L4.4 3.3h2.7l5.1 7.2.8 1.1 6.7 9.4H17l-5.4-7.8z" fill="currentColor" stroke="none"/></svg></a><a href="https://t.me/AIRewardrop" target="_blank" rel="noopener noreferrer" aria-label="Telegram Channel" title="Telegram Channel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m21.5 3.6-19 7.5c-.7.3-.7 1.2 0 1.5l4.7 1.7 1.8 5.6c.2.6 1 .8 1.5.3l2.6-2.5 4.9 3.6c.5.4 1.3.1 1.4-.5l3.1-16.1c.1-.8-.6-1.4-1.4-1.1zM8.5 13.9l9.5-6.7c.2-.2.5.1.3.3l-7.6 7.5-.3 3z" fill="currentColor" stroke="none"/></svg></a><a href="https://t.me/AIR3Community" target="_blank" rel="noopener noreferrer" aria-label="Telegram Community" title="Telegram Community"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m21.5 3.6-19 7.5c-.7.3-.7 1.2 0 1.5l4.7 1.7 1.8 5.6c.2.6 1 .8 1.5.3l2.6-2.5 4.9 3.6c.5.4 1.3.1 1.4-.5l3.1-16.1c.1-.8-.6-1.4-1.4-1.1zM8.5 13.9l9.5-6.7c.2-.2.5.1.3.3l-7.6 7.5-.3 3z" fill="currentColor" stroke="none"/></svg></a><a href="https://discord.gg/S4f87VdsHt" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19.3 5.3A16.9 16.9 0 0 0 15.1 4l-.5 1.1a15.6 15.6 0 0 0-5.2 0L8.9 4a16.9 16.9 0 0 0-4.2 1.3C2 9.4 1.3 13.4 1.6 17.3A17 17 0 0 0 6.8 20l1.1-1.8c-.6-.2-1.2-.5-1.7-.9l.4-.3a12.2 12.2 0 0 0 10.8 0l.4.3c-.5.4-1.1.7-1.7.9L17.2 20a17 17 0 0 0 5.2-2.7c.4-4.5-.7-8.4-3.1-12zM8.7 14.8c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.twitch.tv/airewardrop" target="_blank" rel="noopener noreferrer" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4.3 2 2.5 6.7v15h5.1V24h2.9l2.3-2.3h3.5l4.7-4.7V2zm15 14.1-2.7 2.7h-4.3L10 21.1v-2.3H6.4V4h12.9zM16.6 7.5v5.7h-1.9V7.5zm-5.1 0v5.7H9.6V7.5z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.youtube.com/@AIRewardrop" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M23 7.2a2.8 2.8 0 0 0-2-2C19.2 4.7 12 4.7 12 4.7s-7.2 0-9 .5a2.8 2.8 0 0 0-2 2A29.4 29.4 0 0 0 .5 12 29.4 29.4 0 0 0 1 16.8a2.8 2.8 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a2.8 2.8 0 0 0 2-2 29.4 29.4 0 0 0 .5-4.8 29.4 29.4 0 0 0-.5-4.8zM9.7 15.4V8.6l6 3.4z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@airewardrop" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16.8 2h-3.3v13.6a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.4a6.3 6.3 0 0 0-.9-.1 6.2 6.2 0 1 0 6.2 6.3V8.7a7.7 7.7 0 0 0 4.5 1.4V6.8A4.6 4.6 0 0 1 16.8 2z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.instagram.com/airewardrop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg></a></div>
+        <p class="risk-note">AIR3 and AIRTrading are experimental AI-assisted trading products. Nothing on this site is financial advice. Crypto and perp trading involve substantial risk, including loss of capital. Past performance and alpha season data do not guarantee future results.</p>
+      </div>
+      <div class="footer-col">
+        <h4>AIR3</h4>
+        <a href="/product/">Product Suite</a>
+        <a href="/airtrading/">AIRTrading</a>
+        <a href="/airtrack/">AIRTrack</a>
+        <a href="/airi/">AIRi</a>
+        <a href="/live/">Live Agent</a>
+        <a href="/token/">$AIR3 Token</a>
+        <a href="/roadmap/">Roadmap</a>
+        <a href="/manual/">Deposit Guide</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ecosystem</h4>
+        <a href="https://airdapp.airewardrop.xyz" target="_blank" rel="noopener noreferrer">AIRdApp ↗</a>
+        <a href="https://airi.airewardrop.xyz" target="_blank" rel="noopener noreferrer">AIRi Live ↗</a>
+        <a href="https://airtrack.airewardrop.xyz" target="_blank" rel="noopener noreferrer">AIRTrack App ↗</a>
+        <a href="https://airewardrop.xyz" target="_blank" rel="noopener noreferrer">AIRewardrop ↗</a>
+        <a href="https://airewardrop.gitbook.io/air3" target="_blank" rel="noopener noreferrer">Docs ↗</a>
+        <a href="/partners/">Partners</a>
+        <a href="/proof/">Onchain Proof</a>
+        <a href="/faq/">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="https://x.com/AIRewardrop" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://t.me/AIRewardrop" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
+        <a href="https://t.me/AIR3Community" target="_blank" rel="noopener noreferrer">Telegram Community</a>
+        <a href="https://discord.gg/S4f87VdsHt" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://www.twitch.tv/airewardrop" target="_blank" rel="noopener noreferrer">Twitch</a>
+        <a href="https://www.youtube.com/@AIRewardrop" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.tiktok.com/@airewardrop" target="_blank" rel="noopener noreferrer">TikTok</a>
+        <a href="https://www.instagram.com/airewardrop/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="https://airewardrop.xyz/legal/terms-of-service" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+        <a href="https://airewardrop.xyz/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <a href="https://airewardrop.xyz/legal/cookie-notice" target="_blank" rel="noopener noreferrer">Cookie Notice</a>
+        <a href="/legal/risk.html">Risk Disclosure</a>
+        <a href="/assets/downloads/AIRTrading_User_Manual_v1.pdf">Manual PDF</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AIRewardrop. AIR3 is a Solana AI trading product by AIRewardrop.</span>
+      <span>$AIR3 CA: <code>2jvsWRkT17ofmv9pkW7ofqAFWSCNyJYdykJ7kPKbmoon</code></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/livedata.js" defer></script>
+</body>
+</html>

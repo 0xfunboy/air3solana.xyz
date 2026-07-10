@@ -1,0 +1,181 @@
+<section class="page-hero">
+  <div class="wrap">
+    <div class="hero-badges" data-reveal>
+      <span class="badge badge-beta"><span class="dot"></span>Mainnet Beta</span>
+      <span class="badge badge-blue"><span class="dot"></span>Pacifica Execution</span>
+    </div>
+    <span class="eyebrow" data-reveal>AIRTrading</span>
+    <h1 data-reveal><span class="grad-silver">Weekly vault execution</span><br><span class="grad-blue">for AIR3 trades.</span></h1>
+    <p class="lead" data-reveal>AIRTrading is the automated trading module of AIRdApp. It runs on a proprietary on-chain vault model on Solana: you deposit USDC, the AIR3 agent trades for the whole vault, and results settle once per week at the end of each season.</p>
+    <div class="cta-row" data-reveal>
+      <a class="btn btn-primary btn-lg" href="{{dapp}}" target="_blank" rel="noopener noreferrer">Open AIRTrading <span class="arr">→</span></a>
+      <a class="btn btn-ghost btn-lg" href="/manual/">Deposit Guide</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIVE TELEMETRY ============ -->
+<section class="section tight" style="padding-top:8px">
+  <div class="wrap">
+    <div class="hud gridded" data-reveal>
+      <div class="telemetry-head">
+        <div class="hud-title" style="border:0; padding:0; margin:0"><span>Vault Telemetry</span></div>
+        <span class="badge badge-live"><span class="dot"></span>Live from AIRdApp</span>
+      </div>
+      <div class="telemetry-grid">
+        <div class="stat"><strong data-live="vault_capital"></strong><span>Vault Capital</span><small>USDC in the vault</small></div>
+        <div class="stat"><strong data-live="global_pnl"></strong><span>Global Vault PnL</span><small>all time</small></div>
+        <div class="stat"><strong data-live="season_pnl"></strong><span>Current Season PnL</span><small>this week</small></div>
+        <div class="stat"><strong data-live="season_ends"></strong><span>Season Ends In</span><small>weekly cutoff countdown</small></div>
+      </div>
+      <p class="live-meta" style="margin:14px 0 0">Snapshot <span data-live="fetched_at"></span> · same backend the dApp reads · <a href="{{solscan_vault}}" target="_blank" rel="noopener noreferrer">vault on Solscan ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow blue">Protocol</span>
+      <h2>The vault protocol in five moves.</h2>
+      <p class="lead">Epoch-based on-chain execution with full profit distribution. The AIR3 agent scans approved signals and executes automated perp trades on Pacifica; trade size adapts to vault liquidity, so PnL is tracked as a size-weighted average across all participants.</p>
+    </div>
+    <div class="hud gridded" data-reveal>
+      <div class="steps">
+        <div class="step"><b>Deposit</b><span>Users deposit USDC into the vault. Receipt units are minted to the wallet immediately.</span></div>
+        <div class="step"><b>Strategy</b><span>The agent executes trades on Pacifica via the executor wallet and builder code.</span></div>
+        <div class="step"><b>Season close</b><span>The weekly season settles and net PnL is finalized on schedule.</span></div>
+        <div class="step"><b>Profit split</b><span>Positive PnL routes through treasury fee, AIR3 buyback and the 50/50 split.</span></div>
+        <div class="step"><b>Exit</b><span>Book exit, wait one season rollover, then claim capital and accrued rewards.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow">Season cycle</span>
+        <h2>Everything moves on a weekly clock.</h2>
+        <p class="lead">Your capital always follows the same four stages. All capital movements, from activation to settlement to exits, happen at the weekly cutoff.</p>
+        <div class="stages mt-3">
+          <div class="stage s1"><b>Pending</b><span>Deposited capital waiting for the next season. It does not trade yet.</span></div>
+          <div class="stage s2"><b>Active</b><span>Capital live in the current season, exposed to weekly PnL.</span></div>
+          <div class="stage s3"><b>Exit booked</b><span>Withdrawal requested. Keeps trading until the season settles.</span></div>
+          <div class="stage s4"><b>Claimable</b><span>Exit cycle finished, ready to claim to your wallet.</span></div>
+        </div>
+      </div>
+      <div class="hud" data-reveal="right">
+        <div class="hud-title"><span>At each weekly cutoff</span></div>
+        <ol class="step-list" style="margin:0">
+          <li><b>The running season settles</b>PnL is finalized for all active capital.</li>
+          <li><b>Positive PnL is extracted</b>Routed to the reward flow: treasury, buyback, distribution.</li>
+          <li><b>Pending deposits activate</b>They join the new season and start trading.</li>
+          <li><b>Booked exits move out</b>Into the isolated claimable reserve.</li>
+          <li><b>A new season starts</b>The countdown resets for one more week.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="grid-2">
+      <div class="hud" data-reveal>
+        <div class="hud-title"><span>Mainnet Beta Rules</span><span class="t-red">dApp values are authoritative</span></div>
+        <div class="tbl-wrap" style="border:0; background:transparent">
+          <table class="tbl">
+            <tbody>
+              <tr><td>Min deposit</td><td><b>10 USDC</b></td></tr>
+              <tr><td>Max deposit</td><td><b>500 USDC</b> per wallet during mainnet beta</td></tr>
+              <tr><td>Whitelist policy</td><td>When ON, listed wallets deposit; holding at least the AIR3 threshold (currently <b>1,000,000 AIR3</b>) also qualifies</td></tr>
+              <tr><td>Activation</td><td><b>Next weekly cutoff</b>; pending capital does not trade</td></tr>
+              <tr><td>Losses</td><td>Stay inside capital through the <b>global season index</b>; new deposits do not inherit older loss windows</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="hud" data-reveal>
+        <div class="hud-title"><span>Profit Distribution</span><span>settlement-based</span></div>
+        <dl class="readout">
+          <div><dt>1 · Treasury fee</dt><span class="fill"></span><dd>1% of positive PnL · min $0.10</dd></div>
+          <div><dt>2 · Buyback routing</dt><span class="fill"></span><dd>remainder buys $AIR3</dd></div>
+          <div><dt>3 · Swap threshold</dt><span class="fill"></span><dd>runs above $5 · else rolls over</dd></div>
+          <div><dt>4 · Split</dt><span class="fill"></span><dd>50% users · 50% treasury</dd></div>
+          <div><dt>5 · Delivery</dt><span class="fill"></span><dd>rewards delivered at claim</dd></div>
+        </dl>
+        <div class="callout ok" style="margin-bottom:0"><b>In short:</b> profitable weeks buy AIR3, half to depositors pro-rata and half to treasury. Losing weeks simply reduce the season index: there is no fee on losses.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BACKTEST ENGINE ============ -->
+<section class="section" id="backtest" style="scroll-margin-top:90px">
+  <div class="wrap">
+    <div class="hud gridded" data-reveal>
+      <div class="hud-title"><span>AIR3 Backtest Engine</span><span class="badge badge-live"><span class="dot"></span>In the Loop</span></div>
+      <div class="split" style="align-items:start; gap:40px">
+        <div>
+          <h2 style="margin-top:4px"><span class="grad-silver">From executing</span><br><span class="grad-blue">to understanding.</span></h2>
+          <p class="lead">The Backtest Engine retests the live strategy on AIR3's own real, time-relevant dataset and stress-tests infinite variants before they reach execution. AIR3 moves beyond predicting and executing: it learns why a config works, when it stops working, and what changes make it effective again.</p>
+          <p class="muted small">Validated configs are ingested straight into the real-time execution system. No time and no money wasted testing on live capital.</p>
+          <div class="cta-row">
+            <a class="btn btn-ghost" href="https://x.com/AIRewardrop/status/2067629039121047982" target="_blank" rel="noopener noreferrer">Read the announcement on X ↗</a>
+          </div>
+        </div>
+        <div class="grid-2" style="gap:14px">
+          <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M10 8.5v7l6-3.5z"/></svg></div><h3>Strategy replay</h3><p>The live strategy re-runs on real AIRTrack execution data, season by season.</p></div>
+          <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V3"/><path d="M7.5 14.5h9"/></svg></div><h3>What-if config testing</h3><p>Entry, TP/SL, trailing and sizing variants tested in bulk before touching execution.</p></div>
+          <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4.5"/></svg></div><h3>Before live capital</h3><p>Only configs that survive the replay and the what-if grid are promoted to the vault.</p></div>
+          <div class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 3.5V8h-4.5"/></svg></div><h3>Continuous ingestion</h3><p>Winning configs feed back into real-time execution and the next season's behavior.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="split rev">
+      <div data-reveal="right">
+        <span class="eyebrow">Risk framework</span>
+        <h2>The strategy earns its leverage.</h2>
+        <p class="lead">AIRTrading is engineered to scale. The base strategy runs at 1x while the Backtest Engine validates every config against real execution data; as live and simulated results align, leverage steps up on a strategy that has already proven itself, with 10x as the target multiplier.</p>
+        <dl class="readout">
+          <div><dt>Current phase</dt><span class="fill"></span><dd>1x base strategy · validation cycle</dd></div>
+          <div><dt>Trailing stop</dt><span class="fill"></span><dd>follows after 50% of entry→TP path</dd></div>
+          <div><dt>Position sizing</dt><span class="fill"></span><dd>dynamic · adapts to vault liquidity</dd></div>
+          <div><dt>Drawdown</dt><span class="fill"></span><dd>max daily limits enforced</dd></div>
+          <div><dt>Backtest Engine</dt><span class="fill"></span><dd class="val-blue">validates configs on real datasets</dd></div>
+          <div><dt>Leverage path</dt><span class="fill"></span><dd class="val-blue">controlled steps toward 10x</dd></div>
+        </dl>
+      </div>
+      <div class="hud red" data-reveal="left">
+        <div class="hud-title"><span class="t-red">Risk Disclosure</span></div>
+        <p class="muted small">AIRTrading is a <b style="color:var(--text)">mainnet beta</b> product involving real trading risk. The agent trades perps and seasons can close in loss: losses reduce the season index and therefore your capital. Deposit limits, whitelist policy and thresholds may change as the vault matures.</p>
+        <p class="muted small" style="margin-bottom:0">Only deposit what you can afford to risk. Nothing on this page is financial advice. <a href="/legal/risk.html">Full risk disclosure →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="hud plain" data-reveal>
+      <div class="hud-title"><span>Execution venue · Pacifica</span><span class="badge badge-blue"><span class="dot"></span>Builder Program</span></div>
+      <div class="grid-3">
+        <div><h4 style="color:var(--blue-2)">Solana-native perp DEX</h4><p class="small muted">AIR3 executes on Pacifica, a Solana perpetuals DEX with $1B+ volume, through the AIRewardrop builder code.</p></div>
+        <div><h4 style="color:var(--blue-2)">Points while you trade</h4><p class="small muted">Capital trading through the AIRTrading vault also earns Pacifica points under the builder program.</p></div>
+        <div><h4 style="color:var(--blue-2)">Multi-venue future</h4><p class="small muted">Jupiter spot/routing expansion and more tickers are on the roadmap after execution alignment. <a href="{{pacifica}}" target="_blank" rel="noopener noreferrer">Visit Pacifica ↗</a></p></div>
+      </div>
+    </div>
+    <div class="cta-row" data-reveal>
+      <a class="btn btn-primary btn-lg" href="{{dapp}}" target="_blank" rel="noopener noreferrer">Open AIRTrading <span class="arr">→</span></a>
+      <a class="btn btn-ghost btn-lg" href="/manual/">Step-by-step Deposit Guide</a>
+      <a class="btn btn-ghost btn-lg" href="{{solscan_vault}}" target="_blank" rel="noopener noreferrer">Vault on Solscan</a>
+    </div>
+  </div>
+</section>

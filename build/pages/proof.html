@@ -1,0 +1,50 @@
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Onchain Proof</span>
+    <h1 data-reveal><span class="grad-silver">Reports link back</span> <span class="grad-blue">to the chain.</span></h1>
+    <p class="lead" data-reveal>AIR3 reports should not depend on screenshots alone. The proof layer links back to onchain transfers, vault accounting and AIRTrack views wherever possible.</p>
+    <div class="cta-row" data-reveal>
+      <a class="btn btn-primary btn-lg" href="{{solscan_vault}}" target="_blank" rel="noopener noreferrer">Open Solscan vault <span class="arr">→</span></a>
+      <a class="btn btn-blue btn-lg" href="{{airtrack}}" target="_blank" rel="noopener noreferrer">Open AIRTrack</a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="split" style="align-items:start">
+      <div data-reveal="left">
+        <span class="eyebrow blue">Coverage</span>
+        <h2>What the proof layer covers.</h2>
+        <div class="grid-2 mt-3" style="gap:14px">
+          <div class="card"><h3 style="margin-top:0">Vault transfers</h3><p>Deposits, claims and capital movements on the vault account, visible on Solscan.</p></div>
+          <div class="card"><h3 style="margin-top:0">Buyback transactions</h3><p>USDC routed to AIR3 buybacks at each profitable settlement.</p></div>
+          <div class="card"><h3 style="margin-top:0">Pro-rata distribution</h3><p>AIR3 reward flows split 50/50 between users and treasury.</p></div>
+          <div class="card"><h3 style="margin-top:0">Season reports</h3><p>Weekly public summaries with performance, risk notes and status updates.</p></div>
+          <div class="card"><h3 style="margin-top:0">AIRTrack history</h3><p>Trade states, realized PnL and lifetime counters behind every claim.</p></div>
+          <div class="card"><h3 style="margin-top:0">Vault accounting</h3><p>Active, pending, exit-booked and claimable capital, synced from the season snapshot.</p></div>
+        </div>
+      </div>
+      <div data-reveal="right">
+        <div class="term" aria-label="Proof endpoints">
+          <div class="term-bar"><span class="dots"><i></i><i></i><i></i></span><b>Proof Endpoints</b></div>
+          <div class="term-body">
+            <dl class="readout">
+              <div><dt>Vault account</dt><span class="fill"></span><dd><a href="{{solscan_vault}}" target="_blank" rel="noopener noreferrer">Solscan ↗</a></dd></div>
+              <div><dt>Token</dt><span class="fill"></span><dd><a href="{{solscan_token}}" target="_blank" rel="noopener noreferrer">Solscan ↗</a></dd></div>
+              <div><dt>Chart</dt><span class="fill"></span><dd><a href="{{dexscreener}}" target="_blank" rel="noopener noreferrer">DexScreener ↗</a></dd></div>
+              <div><dt>Trade history</dt><span class="fill"></span><dd><a href="{{airtrack}}" target="_blank" rel="noopener noreferrer">AIRTrack ↗</a></dd></div>
+              <div><dt>Season reports</dt><span class="fill"></span><dd><a href="{{x}}" target="_blank" rel="noopener noreferrer">X / @AIRewardrop ↗</a></dd></div>
+              <div><dt>Docs</dt><span class="fill"></span><dd><a href="{{docs}}" target="_blank" rel="noopener noreferrer">GitBook ↗</a></dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="hud mt-2">
+          <div class="hud-title"><span>Season reports · cadence</span></div>
+          <p class="muted small" style="margin-bottom:0">Every weekly season closes with a public report: performance, buyback and distribution status, risk-management notes and what changed. Eight alpha season reports have been published to date. Find them pinned on <a href="{{x}}" target="_blank" rel="noopener noreferrer">X ↗</a> and in the <a href="{{tg_channel}}" target="_blank" rel="noopener noreferrer">Telegram channel ↗</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout warn" data-reveal><b>Alpha data disclaimer:</b> performance metrics, APR/APY projections and season summaries are alpha data points. They are not guaranteed returns and must not be treated as financial advice.</div>
+  </div>
+</section>
