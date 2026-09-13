@@ -99,3 +99,7 @@ cd site && python3 -m http.server 8080
 - No wallet connection on the product site; wallet actions live in AIRdApp/AIRi.
 - All external links use `rel="noopener noreferrer"`.
 - Terms/Privacy/Cookie point to airewardrop.xyz/legal/*; Risk Disclosure is local.
+
+## Licensing
+
+Licensing scope and preserved third-party permissions are documented in [LICENSING.md](LICENSING.md). The [0xfunboy Non-Commercial License](LICENSE.md) covers eligible original material only.
