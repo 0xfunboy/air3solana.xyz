@@ -100,6 +100,12 @@ cd site && python3 -m http.server 8080
 - All external links use `rel="noopener noreferrer"`.
 - Terms/Privacy/Cookie point to airewardrop.xyz/legal/*; Risk Disclosure is local.
 
+## Production build
+
+The document root is `site/`. The Python generator reads the page fragments in `build/pages/` and updates the HTML, sitemap and crawler files. The static assets and hosting files in `site/` complete the release.
+
+To reproduce the deployed snapshot, run `SITEMAP_DATE=2026-07-10 python3 build/build.py` from a fresh checkout, then `sha256sum -c production.sha256`. The sitemap date comes from the distributed sitemap. For a new release, omitting the variable uses the build date. Point a static web server at `site/` to preview it.
+
 ## Licensing
 
 Licensing scope and preserved third-party permissions are documented in [LICENSING.md](LICENSING.md). The [0xfunboy Non-Commercial License](LICENSE.md) covers eligible original material only.
