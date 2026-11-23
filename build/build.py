@@ -330,7 +330,8 @@ def build():
                 '</head><body><p>AIRifica is now <a href="/airi/">AIRi</a>.</p></body></html>\n')
 
     # sitemap
-    today = datetime.date.today().isoformat()
+    today = os.environ.get("SITEMAP_DATE") or datetime.date.today().isoformat()
+    datetime.date.fromisoformat(today)
     urls = "\n".join(
         f"  <url><loc>{DOMAIN}/{o.replace('index.html','')}</loc><lastmod>{today}</lastmod></url>"
         for _, o, *_ in [(p[0], p[1]) for p in PAGELIST]
